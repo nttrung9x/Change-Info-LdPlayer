@@ -9,7 +9,7 @@ class KautoHelper:
         self.host = host
         self.port = port
 
-    def getDeviceServer(self, device_num):
+    def GetDeviceServer(self, device_num):
         # Default is "127.0.0.1" and 5037
 
         client = AdbClient(host=self.host, port=self.port)
@@ -17,14 +17,14 @@ class KautoHelper:
 
         return devices[device_num]
 
-    def getAdbDevice(self, device_name):
+    def GetAdbDevice(self, device_name):
 
         client = AdbClient(host=self.host, port=self.port)
         device = client.device(device_name)
 
         return device
 
-    def listAllDevices(self):
+    def ListAllDevices(self):
 
         client = AdbClient(host=self.host, port=self.port)
         devices = client.devices()
@@ -91,7 +91,7 @@ class KautoHelper:
             time.sleep(time_write)
             device.input_text(text[i])
 
-    def clear_input(self, device, time_to_delete):
+    def ClearInput(self, device, time_to_delete):
 
         device.shell("input keyevent KEYCODE_MOVE_END")
         for i in range(time_to_delete):
@@ -101,4 +101,8 @@ class KautoHelper:
     def ChangeProxy(self, device, proxy):
         return self.ExecuteCommand(device,"settings put global http_proxy {}".format(proxy))
 
+    def RemoveProxy(self, device):
+        return self.ExecuteCommand(device,"settings put global http_proxy :0")
+
+    
 
