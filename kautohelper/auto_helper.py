@@ -5,18 +5,16 @@ import time
 import pyotp
 from pyzbar.pyzbar import decode
 from PIL import Image
-
+import re
 class AutoADB():
 
-    def __init__(self, pathLd):
+    def GetDevices(self):
 
-        self.pathLD = pathLd
+        devices = []
+        de = str(subprocess.check_output("adb devices"))
+        matchCollection = re.findall("\Semulator-\d\d\d\d", de)
+        return matchCollection
 
-    def ExecuteLD_Result(self, cmd):
-        pathLd = self.pathLD
-        text = subprocess.run(pathLd + cmd).returncode
-        return text
 
-    def ExecuteCMD(self,index,cmd):
-        return self.ExecuteLD_Result(("adb --{0} --command \'{1}\'").format(index,cmd))
-
+auto = AutoADB()
+print(auto.GetDevices())
