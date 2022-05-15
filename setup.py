@@ -1,4 +1,4 @@
-from . import kautohelper
+from . import autohelper
 
 __all__ = ['kautohelper']
-__all__.extend(kautohelper.__all__)
+__all__.extend(autohelper.__all__)
