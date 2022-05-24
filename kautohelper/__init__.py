@@ -15,9 +15,8 @@ class AutoADB():
 
     def ExecuteCMD(self, cmd):
 
-        output = subprocess.run(cmd, shell=True).returncode
-        if output:
-            return output
+        output = subprocess.check_output(cmd)
+        return output
 
     def GetDevices(self):
 
@@ -95,10 +94,9 @@ class AutoADB():
         for y, x in zip(loc[0], loc[1]):
             return self.Tap(deviceID, x+6, y+6)
 
-    def Get2FA(self, code_2fa=None):
-        if code_2fa:
-            to_otp =pyotp.TOTP(code_2fa)
-            return to_otp.now()
+    def Get2FA(self, code_2fa):
+        to_otp =pyotp.TOTP(code_2fa)
+        return to_otp.now()
 
     def EnableWifi(self, deviceID):
         return self.ExecuteCMD("adb -s {0} shell su -c 'svc wifi enable'".format(deviceID))
@@ -111,3 +109,5 @@ class AutoADB():
 
     def OpenPackage(self, deviceD ,package):
         return self.ExecuteCMD((self.config.OPEN_PACKAGE).format(deviceD, package))
+
+
