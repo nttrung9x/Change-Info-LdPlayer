@@ -1,15 +1,14 @@
 
 class Configure():
 
-    def __init__(self, ADB_PATH):
+    def __init__(self):
 
-        self.ADB_PATH = ADB_PATH
         self.LIST_DEVICES = "adb devices"
         self.TAP_DEVICES = "adb -s {0} shell input tap {1} {2}"
         self.SWIPE_DEVICES = "adb -s {0} shell input swipe {1} {2} {3} {4} {5}"
         self.KEY_DEVICES = "adb -s {0} shell input keyevent {1}"
         self.INPUT_TEXT_DEVICES = "adb -s {0} shell input text \"{1}\""
-        self.CAPTURE_SCREEN_TO_DEVICES = "adb -s {0} shell screencap -p /sdcard/screenShoot.png"
+        self.CAPTURE_SCREEN_TO_DEVICES = "adb -s {0} shell screencap -p /sdcard/screen_{0}.png"
         self.PULL_FILE_FROM_DEVICES = "adb -s {0} pull \"{1}\" {2}"
         self.PUSH_FILE_FROM_DEVICES = "adb -s {0} push \"{1}\" {2}"
         self.REMOVE_SCREEN_FROM_DEVICES = "adb -s {0} shell rm -f \"{1}\""

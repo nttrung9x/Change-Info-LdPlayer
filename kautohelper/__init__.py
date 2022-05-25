@@ -9,9 +9,8 @@ import configuration
 import re
 class AutoADB():
     
-    def __init__(self, ADB_PATH):
-        self.config = configuration.Configure(ADB_PATH)
-
+    def __init__(self):
+        self.config = configuration.Configure()
 
     def ExecuteCMD(self, cmd):
 
@@ -57,8 +56,9 @@ class AutoADB():
     def Keyevent(self, deviceID, key):
         return self.ExecuteCMD((self.config.KEY_DEVICES).format(deviceID,key))
 
-    def ScreenShoot(self, deviceID, file="/sdcard/screenShoot.png"):
+    def ScreenShoot(self, deviceID):
 
+        file = ("/sdcard/screen_{0}.png").format(deviceID)
         self.ExecuteCMD((self.config.CAPTURE_SCREEN_TO_DEVICES).format(deviceID))
         self.Pull(deviceID,file,"")
 
@@ -68,7 +68,7 @@ class AutoADB():
         img = cv2.imread(image)
 
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        template = cv2.imread("screenShoot.png", 0)
+        template = cv2.imread("screen_{0}.png".format(deviceID), 0)
 
         res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
         THRESHOLD = 0.9
@@ -85,7 +85,7 @@ class AutoADB():
         img = cv2.imread(image)
 
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        template = cv2.imread("screenShoot.png", 0)
+        template = cv2.imread("screen_{0}.png".format(deviceID), 0)
 
         res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
         THRESHOLD = 0.9
@@ -110,4 +110,5 @@ class AutoADB():
     def OpenPackage(self, deviceD ,package):
         return self.ExecuteCMD((self.config.OPEN_PACKAGE).format(deviceD, package))
 
-
+auto = AutoADB()
+auto.ScreenShoot('emulator-5554')
