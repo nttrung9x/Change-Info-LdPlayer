@@ -2,11 +2,12 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/ldhelper/__init__.py" line="7" />
+    <bookmark url="file://$PROJECT_DIR$/reg-clone-v2.py" line="38" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9cf810f-892a-459f-a6c3-49c25d1358f6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kautohelper/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/kautohelper/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kautohelper/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/kautohelper/configuration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ldhelper/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ldhelper/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,22 +19,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kautohelper/__init__.py">
+        <entry file="file://$PROJECT_DIR$/reg-clone-v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="160">
+              <caret line="11" column="21" lean-forward="true" selection-end-line="109" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kautohelper/configuration.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -50,7 +42,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>;</find>
+      <find>call</find>
+      <find>run</find>
     </findStrings>
+    <replaceStrings>
+      <replace>run</replace>
+      <replace>call</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,9 +69,10 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/otphelper/__init__.py" />
         <option value="$PROJECT_DIR$/ldhelper/json_load.py" />
-        <option value="$PROJECT_DIR$/ldhelper/__init__.py" />
         <option value="$PROJECT_DIR$/kautohelper/configuration.py" />
+        <option value="$PROJECT_DIR$/ldhelper/__init__.py" />
         <option value="$PROJECT_DIR$/kautohelper/__init__.py" />
+        <option value="$PROJECT_DIR$/reg-clone-v2.py" />
       </list>
     </option>
   </component>
@@ -101,16 +100,6 @@
               <item name="kauto-python" type="462c0819:PsiDirectoryNode" />
               <item name="kautohelper" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="kauto-python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kauto-python" type="462c0819:PsiDirectoryNode" />
-              <item name="ldhelper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kauto-python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kauto-python" type="462c0819:PsiDirectoryNode" />
-              <item name="otphelper" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -119,17 +108,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ldhelper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\An\python\kauto-python\ldhelper" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\An\python\kauto-python\kautohelper" />
       <recent name="G:\An\python\kauto-python" />
       <recent name="G:\An\python\kauto-python\kauto-helper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\An\python\kauto-python" />
+      <recent name="G:\An\python\kauto-python\ldhelper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,7 +134,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.__init__ (1)">
+  <component name="RunManager" selected="Python.reg-clone-v2">
     <configuration name="__init__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="kauto-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,7 +219,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="reg-clone-v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="kauto-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,7 +231,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reg-clone-v2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,11 +242,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.reg-clone-v2" />
         <item itemvalue="Python.__init__ (1)" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.json_load" />
         <item itemvalue="Python.auto_helper" />
-        <item itemvalue="Python.test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -275,6 +265,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.2192216" />
       <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.2494043" />
@@ -329,16 +320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/otphelper/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ldhelper/json_load.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -356,18 +337,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kautohelper/screen_emulator-5554.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configuration.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ldhelper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="1360">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kautohelper/screen_emulator-5554.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/kautohelper/configuration.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -376,12 +363,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/otphelper/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-564">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kautohelper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="182">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reg-clone-v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="21" lean-forward="true" selection-end-line="109" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

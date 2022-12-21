@@ -18,30 +18,5 @@
     {
         "manufacturer": "ZTE",
         "models": ["ZTE Zmax Pro", "ZTE Vital N9810", "ZTE nubia N1", "ZTE Grand X Pro", "ZTE nubia Z11 Max", "ZTE Grand X2 In", "ZTE Axon 7", "ZTE Grand X Quad V987", "vGrand X Max 2", "ZTE Blade III Pro", "ZTE nubia Z11", "ZTE Geek V975", "ZTE nubia Z11 mini", "ZTE Grand Memo V9815", "ZTE Blade L5 Plus", "ZTE Open", "ZTE Blade V Plus", "ZTE Blade C V807", "ZTE Blade V7", "ZTE Director", "ZTE Blade A2", "ZTE V81", "ZTE Blade V7 Lite", "ZTE Grand S", "ZTE Axon Max", "ZTE Avid 4G", "ZTE nubia Prague S", "ZTE V889M", "ZTE Grand X 3", "ZTE V887", "ZTE Avid Plus", "ZTE Kis III V790", "ZTE Blade X9", "ZTE nubia Z5", "ZTE Blade X5", "ZTE Flash", "ZTE Blade X3", "ZTE Anthem 4G", "ZTE Axon Watch", "ZTE Warp Sequent", "ZTE Axon", "ZTE Grand Era U895", "ZTE Blade S7", "ZTE Blade III", "ZTE Axon mini", "ZTE Grand X IN", "ZTE Zmax 2", "ZTE N880E", "ZTE Axon Elite", "ZTE Grand X LTE T82", "ZTE nubia My Prague", "ZTE Grand X V970", "ZTE Axon Lux", "ZTE U880E", "ZTE Boost Max+", "ZTE Score M", "ZTE Blade A460", "ZTE Light Tab 300", "ZTE Blade D6", "ZTE V96", "ZTE Axon Pro", "ZTE PF 100", "ZTE Blade A410", "ZTE T98", "ZTE Obsidian", "ZTE Light Tab 3 V9S", "ZTE Grand X2", "ZTE Era", "ZTE Sonata 2", "ZTE PF112 HD", "ZTE Blade Apex 3", "ZTE Skate Acqua", "ZTE Maven", "ZTE Orbit", "ZTE Blade Q Pro", "ZTE Kis V788", "ZTE Blade Qlux 4G", "ZTE V880E", "ZTE nubia Z9", "ZTE Nova 3.5", "ZTE Blade S6 Plus", "ZTE Nova 4 V8000", "ZTE nubia Z9 Max", "ZTE Nova Messenger", "ZTE nubia Z9 mini", "ZTE Style Q", "ZTE Open L", "ZTE Style Messanger", "ZTE Grand S3", "ZTE V875", "ZTE Blade L3 Plus", "ZTE Blade II V880+", "ZTE Blade L3", "ZTE N910", "ZTE Blade G Lux", "ZTE PF200", "ZTE Blade G", "ZTE Optik", "ZTE V5 Lux", "ZTE Light Tab 2 V9A", "ZTE Blade S6", "ZTE Light Tab V9C", "ZTE Imperial II", "ZTE FTV Phone", "ZTE Grand X Max+", "ZTE Chorus", "ZTE Star 2", "ZTE Memo", "ZTE Grand X Plus Z826", "ZTE Tania", "ZTE Speed", "ZTE Warp", "ZTE Grand S II", "ZTE Score", "ZTE Grand S Pro", "ZTE Avail", "ZTE Zinger", "ZTE V9+", "ZTE Grand Xmax", "ZTE V9", "ZTE Zmax", "ZTE N721", "ZTE Blade Vec 4G", "ZTE Skate", "ZTE Blade Vec 3G", "ZTE V821", "ZTE Kis 3 Max", "ZTE Amigo", "ZTE nubia Z5S mini NX405H", "ZTE Racer II", "ZTE nubia Z7", "ZTE U900", "ZTE nubia Z7 Max", "ZTE Libra", "ZTE nubia Z7 mini", "ZTE Rio", "ZTE Blade L2", "ZTE Blade", "ZTE Kis 3", "ZTE Sage", "ZTE Blade G2", "ZTE X990D", "ZTE Redbull V5 V9180", "ZTE N290", "ZTE Star 1", "ZTE N280", "ZTE nubia X6", "ZTE R230", "ZTE Grand Memo II LTE", "ZTE R228 Dual SIM", "ZTE Open C", "ZTE R228", "ZTE Open II", "ZTE R221", "ZTE Iconic Phablet", "ZTE R220", "ZTE Sonata 4G", "ZTE S213", "ZTE Grand S II S291", "ZTE Salute F350", "ZTE nubia Z5S", "ZTE F107", "ZTE nubia Z5S mini NX403A", "ZTE E N72", "ZTE Grand S Flex", "ZTE Racer", "ZTE Blade Q Maxi", "ZTE F951", "ZTE Blade Q", "ZTE X990", "ZTE Blade Q Mini", "ZTE Bingo", "ZTE Warp 4G", "ZTE X760", "ZTE Blade V", "ZTE E811", "ZTE Blade G V880G", "ZTE Raise", "ZTE Reef", "ZTE Xiang", "ZTE Imperial", "ZTE A261", "ZTE S302", "ZTE F870", "ZTE F233", "ZTE F600", "ZTE F912", "ZTE F103", "ZTE F952", "ZTE F101", "ZTE F928", "ZTE F100", "ZTE Coral200 Sollar"]
-    },
-	{
-		"manufacturer": "Motorola",
-		"models": ["Moto G4 Plus", "Moto E 2015"]
-	},
-	{
-		"manufacturer": "LG",
-		"models": ["LG G7 ThinQ"]
-	},
-	{
-		"manufacturer": "Asus",
-		"models": ["Doogee X5 Max"]
-	},
-	{
-		"manufacturer": "Nokia",
-		"models": ["Nokia 8"]
-	},
-	{
-		"manufacturer": "Lenovo",
-		"models": ["Lenovo A5"]
-	},
-	{
-		"manufacturer": "LeEco",
-		"models": ["LeEco Le Pro 3"]
-	}
-	
+    }
 ]

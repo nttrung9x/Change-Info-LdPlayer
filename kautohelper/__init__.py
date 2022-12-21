@@ -3,37 +3,49 @@ import cv2
 import numpy as np
 import time
 import pyotp
-from pyzbar.pyzbar import decode
-from PIL import Image
-import configuration
+from . import configuration
 import re
+import random
+import itertools
 class AutoADB():
     
     def __init__(self):
         self.config = configuration.Configure()
 
     def ExecuteCMD(self, cmd):
-
-        output = subprocess.check_output(cmd)
-        return output
+        return subprocess.run(cmd, shell=True)
 
     def GetDevices(self):
 
-        de = str(subprocess.check_output(self.config.LIST_DEVICES, shell=True))
-        matchCollection = re.findall("emulator-\d\d\d\d", de)
-        return matchCollection
+        cmd = subprocess.Popen(self.config.LIST_DEVICES,
+                           stdout=subprocess.PIPE,
+                           stderr=subprocess.STDOUT)
+
+        de = str(cmd.stdout.read())
+        device_list = []
+        array = [de.replace("List of devices attached", "").replace("b'","").replace("\\r","")
+                     .replace("\\t"," ").strip("").split("\\n")]
+
+        array = list(itertools.chain.from_iterable(array))
+        try:
+            array.remove("")
+            array.remove("'")
+            array.remove('')
+        except ValueError:
+            pass
+        for i in range(len(array)):
+            if "offline" not in array[i] and "device" in array[i]:
+                device_list.append(array[i].replace("device","").strip())
+        return device_list
 
     def Tap(self, deviceID, x, y):
         return self.ExecuteCMD((self.config.TAP_DEVICES).format(deviceID,x,y))
-
-    def Key(self, deviceID, key):
-        return self.ExecuteCMD((self.config.KEY_DEVICES).format(deviceID, key))
 
     def InputText(self, deviceID, text):
 
         for i in text:
             self.ExecuteCMD((self.config.INPUT_TEXT_DEVICES).format(deviceID,i))
-            time.sleep(0.2)
+            time.sleep(0.1)
 
     def ClearPackage(self, deviceID, package):
         return self.ExecuteCMD((self.config.CLEAR_PACKAGE).format(deviceID,package))
@@ -57,10 +69,7 @@ class AutoADB():
         return self.ExecuteCMD((self.config.KEY_DEVICES).format(deviceID,key))
 
     def ScreenShoot(self, deviceID):
-
-        file = ("/sdcard/screen_{0}.png").format(deviceID)
-        self.ExecuteCMD((self.config.CAPTURE_SCREEN_TO_DEVICES).format(deviceID))
-        self.Pull(deviceID,file,"")
+        return self.ExecuteCMD("adb -s {0} exec-out screencap -p > screen.png".format(deviceID))
 
     def FindImage(self, deviceID, image):
 
@@ -68,7 +77,7 @@ class AutoADB():
         img = cv2.imread(image)
 
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        template = cv2.imread("screen_{0}.png".format(deviceID), 0)
+        template = cv2.imread("screen.png", 0)
 
         res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
         THRESHOLD = 0.9
@@ -79,20 +88,21 @@ class AutoADB():
                 return True
         return False
 
-    def ClickImage(self, deviceID, image):
+    def ClickImage(self,deviceID,image):
 
-        self.ScreenShoot(deviceID)
-        img = cv2.imread(image)
+        while True:
+            if self.FindImage(deviceID, image) == True:
+                img = cv2.imread(image)
 
-        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        template = cv2.imread("screen_{0}.png".format(deviceID), 0)
+                img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                template = cv2.imread("screen.png", 0)
+                res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
+                THRESHOLD = 0.9
+                loc = np.where(res >= THRESHOLD)
 
-        res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
-        THRESHOLD = 0.9
-        loc = np.where(res >= THRESHOLD)
-
-        for y, x in zip(loc[0], loc[1]):
-            return self.Tap(deviceID, x+6, y+6)
+                for y,x in zip(loc[0], loc[1]):
+                    self.Tap(deviceID,x,y)
+                break
 
     def Get2FA(self, code_2fa):
         to_otp =pyotp.TOTP(code_2fa)
@@ -110,5 +120,22 @@ class AutoADB():
     def OpenPackage(self, deviceD ,package):
         return self.ExecuteCMD((self.config.OPEN_PACKAGE).format(deviceD, package))
 
-auto = AutoADB()
-auto.ScreenShoot('emulator-5554')
+    def ChangeProxy(self, deviceID, proxy):
+        return self.ExecuteCMD("adb -s {0} shell settings put global http_proxy {1}".format(deviceID,proxy))
+
+    def CheckPackage(self, deviceID, package):
+        check = subprocess.check_output("adb -s {0} shell pm list packages".format(deviceID), shell=True)
+        pck = re.findall(package, str(check))
+        if pck:
+            return True
+        else:
+            return False
+
+    def ClearInput(self, deviceID, n):
+
+        self.Tap(deviceID,83,190)
+
+        self.Keyevent(deviceID, "KEYCODE_MOVE_END")
+        for i in range(n):
+            time.sleep(0.1)
+            self.Keyevent(deviceID,67)

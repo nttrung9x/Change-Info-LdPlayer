@@ -1,12 +1,14 @@
 import requests
 import json
-class OTPHelper:
 
-    def __init__(self, api_VOTP=None, api_CTN=None, api_CTSC=None):
+class OTPHelper():
+
+    def __init__(self, api_VOTP=None, api_CTN=None, api_CTSC=None, api_TPX=None):
 
         self.api_VOTP = api_VOTP
         self.api_CTN = api_CTN
         self.api_CTSC = api_CTSC
+
 
     def GetNumberVOTP(self):
         get = requests.get(("https://api.viotp.com/request/get?token={0}&serviceId=7").format(self.api_VOTP)).json()
@@ -60,3 +62,13 @@ class ProxyHelper:
         }
         request = requests.post("https://tmproxy.com/api/proxy/get-new-proxy", json=param).json()
         return request['data']['https']
+
+    def GetCurrentProxyTP(self, api):
+
+        request = requests.get("https://tinproxy.com/api/proxy/get-current-proxy?api_key="+api).json()
+        return request['data']["http_ipv4"]
+
+    def GetNewProxyTP(self, api):
+
+        request = requests.get("https://tinproxy.com/api/proxy/get-new-proxy?api_key="+api).json()
+        return request['data']["http_ipv4"]
